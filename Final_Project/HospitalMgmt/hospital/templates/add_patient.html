@@ -1,0 +1,42 @@
+{% extends 'navigationbar.html' %}
+
+{% load static %}
+{% block body %}
+
+<div class="container" style= " margin-top:30px" >
+    <h2 class="text-center">Add Patient</h2>
+    <br>
+    <form method="post"> 
+        {% csrf_token %}
+        <label>Patient Id</label>
+        <input type="number" class="form-control" name="patient_id" required>
+        <label>First Name</label>
+        <input type="text" class="form-control" name="fname" required>
+        <label>Last Name</label>
+        <input type="text" class="form-control" name="lname" required>
+        <label>Admitted On</label>
+        <input type="date" class="form-control" name="admitted_on" required>
+        <label>Mobile number</label>
+        <input type="tel" name="mobile" pattern="[0-9]{10}"  class="form-control" required>
+        <br>
+        <input type="submit" value="Submit" class="form-control btn btn-primary"> 
+    </form>
+
+</div>
+
+{% ifequal error "no" %}
+<script>
+    alert('Details Saved Successfully!!!'); 
+    window.location=('{% url 'view_patient' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Sorry something went wrong, Try Again!!!'); 
+</script>
+{% endifequal %}
+
+
+
+{% endblock %}

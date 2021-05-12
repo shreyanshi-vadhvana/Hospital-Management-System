@@ -1,0 +1,38 @@
+{% extends 'navigationbar.html' %}
+
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-top:50px">
+<h2 class="text-center">View Ward</h2>
+<br>
+</div>
+
+<table class="table table-hover demo" id="example">
+    <thead>
+    <tr>
+        <th>S.No</th>
+        <th>Ward No</th>
+        <th>Ward Name</th>
+        <th>Doctor Id</th>
+        <th>Dept Id</th>
+    </tr>  
+    </thead>
+    <tbody>
+    {% for i in war%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.ward_no}}</td>
+        <td>{{i.ward_name}}</td>
+        <td>{{i.doctor_id}}</td>
+        <td>{{i.dept_id}}</td>
+
+    </tr>
+    {% endfor %}
+
+
+    </tbody>
+</table>
+
+
+{% endblock %}

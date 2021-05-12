@@ -1,0 +1,36 @@
+{% extends 'navigationbar.html' %}
+
+{% load static %}
+{% block body %}
+
+<div class="container" style= " margin-top:30px" >
+    <h2 class="text-center">Add Department</h2>
+    <br>
+    <form method="post"> 
+        {% csrf_token %}
+        <label>Department Id</label>
+        <input type="number" class="form-control" name="dept_id" required>
+        <label>Department Name</label>
+        <input type="text" class="form-control" name="dept_name" required>
+        <br>
+        
+        <input type="submit" value="Submit" class="form-control btn btn-primary"> 
+    </form>
+
+</div>
+{% ifequal error "no" %}
+<script>
+    alert('Details Saved Successfully!!!'); 
+    window.location=('{% url 'view_department' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Sorry something went wrong, Try Again!!!'); 
+</script>
+{% endifequal %}
+
+
+
+{% endblock %}
