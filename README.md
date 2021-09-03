@@ -5,7 +5,7 @@
   <li>It is a web based application that helps in proper functioning of the hospital without the use of any paper.</li>
   <li>Maintains the medical records, contact details of the patient.</li>
   <li>We can search and filter the details according to our requirements.</li>
-  <li>Can generate CSV file, PDF file and Excel Sheet.<li>
+  <li>Can generate CSV file, PDF file and Excel Sheet.</li>
   <li>Maintains the details and appointment of the doctors.</li>
   <li>Technologies Used: Django, HTML, CSS, Bootstrap.</li>
 </ol>
